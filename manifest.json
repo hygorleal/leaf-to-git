@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Overleaf to GitHub",
+  "name": "Leaf to Git",
   "version": "1.0",
-  "description": "Integração não-oficial para sincronizar projetos do Overleaf com o GitHub.",
+  "description": "Extensão para sincronizar projetos do Overleaf com o GitHub.",
   "permissions": [
     "storage",
     "scripting",
