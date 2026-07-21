@@ -2,7 +2,7 @@ importScripts('jszip.min.js');
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   
-  // 1. Retorna a lista de branches para o Modal
+  // list branches
   if (request.action === "get_branches") {
     chrome.storage.local.get(['githubToken', 'githubRepo'], async (data) => {
       if (!data.githubToken || !data.githubRepo) {
@@ -24,7 +24,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     return true; 
   }
 
-  // 2. Fazer PULL do GitHub
+  //git pull
   if (request.action === "pull_from_github") {
     chrome.storage.local.get(['githubToken', 'githubRepo'], async (data) => {
       try {
@@ -57,7 +57,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     });
   }
 
-  // 3. Fazer PUSH para o GitHub
+  //git push
   if (request.action === "iniciar_sincronizacao") {
     const url = sender.tab.url;
     const projectId = url.split('/project/')[1].split('?')[0].split('#')[0]; 
